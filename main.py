@@ -1,17 +1,9 @@
-
-
+import prior
 import gzip
 
 from tqdm import tqdm
 
-import prior
-
-try:
-    from prior import LazyJsonDataset
-except:
-    raise ImportError("Please update the prior package (pip install --upgrade prior).")
-
-from utils.custom_lazy_json_dataset import NoCacheLazyJsonDataset
+from prior import NoCacheLazyJsonDataset
 
 
 def load_dataset() -> prior.DatasetDict:

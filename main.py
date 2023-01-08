@@ -19,6 +19,6 @@ def load_dataset() -> prior.DatasetDict:
         with gzip.open(f"{split}.jsonl.gz", "r") as f:
             houses = [line for line in tqdm(f, total=size, desc=f"Loading {split}")]
         data[split] = NoCacheLazyJsonDataset(
-            data=houses, dataset="procthor-10k-uniform", split=split
+            data=houses, dataset="procthor-10k-uniform-hard", split=split
         )
     return prior.DatasetDict(**data)

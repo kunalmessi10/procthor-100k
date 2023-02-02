@@ -12,7 +12,6 @@ def load_dataset() -> prior.DatasetDict:
     data = {}
     for split, size in [("train", 100_000)]:
         if not f"{split}.jsonl.gz" in os.listdir('./'):
-                print (os.listdir('./'))
                 wget.download("https://anonymous-neurips22.s3.us-west-2.amazonaws.com/a4h/train.jsonl.gz")
         with gzip.open(f"{split}.jsonl.gz", "r") as f:
             houses = [line for line in tqdm(f, total=size, desc=f"Loading {split}")]

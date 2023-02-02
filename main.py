@@ -1,6 +1,7 @@
 import prior
 import gzip
 import wget
+import os
 from tqdm import tqdm
 
 from prior import LazyJsonDataset
